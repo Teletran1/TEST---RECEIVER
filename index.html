@@ -2,35 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-<style>
-var autosaveOn = true;
-function myAutosavedTextbox_onTextChanged()
-{
-    if (!autosaveOn)
-    {
-        autosaveOn = true;
-
-        $('#myAutosavedTextbox').everyTime("300000", function(){
-             $.ajax({
-                 type: "POST",
-                 url: "",
-                 data: "id=1",
-                 success: function(msg) {
-                     $('#autosavenotify').text(msg);
-                 }
-             });
-        }); //closing tag
-    }
-}
-</style>
-
-
-
-
 <style>
 * {box-sizing: border-box}
 
@@ -120,5 +91,6 @@ document.getElementById("defaultOpen").click();
      
 </body>
 </html> 
+ 
 
 
