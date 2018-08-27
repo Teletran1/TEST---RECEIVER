@@ -1,19 +1,124 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>testpage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<style>
+var autosaveOn = true;
+function myAutosavedTextbox_onTextChanged()
+{
+    if (!autosaveOn)
+    {
+        autosaveOn = true;
+
+        $('#myAutosavedTextbox').everyTime("300000", function(){
+             $.ajax({
+                 type: "POST",
+                 url: "autosavecallbackurl",
+                 data: "id=1",
+                 success: function(msg) {
+                     $('#autosavenotify').text(msg);
+                 }
+             });
+        }); //closing tag
+    }
+}
+</style>
+
+
+
+
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#PAGE1 {background-color: #3399ff;}
+#PAGE2 {background-color: #3399ff;}
+#PAGE3 {background-color: #3399ff;}
+#PAGE4 {background-color: #3399ff;}
+</style>
 </head>
-<body ALINK="#FF0000" LINK="#0000FF" VLINK="#FF33FF" bgcolor="#FFFFCC">
-<table id="myTable" border="1" bgcolor="#CCFFCC" cellpadding="2" cellspacing="5">
-<tr>
-<td>DBA</td>
-<td><input type="text" value="" /></td>
-<td><input type="text" value="" /></td>
-<td><a HREF="" target="new">UPS TRACKER</a></td>
-<td><a HREF="" target="new">BUSINESS DETAILS</a></td>
-<td><input type="submit" value="edit" readonly></td>
-<td><input type="submit" value="save"></td>
-</tr>
-</table>
+<body>
+
+<button class="tablink" onclick="openPage('PAGE1', this, '#3399ff')"><input type="text" ><br></button>
+<button class="tablink" onclick="openPage('PAGE2', this, '#3399ff')" id="defaultOpen"><input type="text" ><br></button>
+<button class="tablink" onclick="openPage('PAGE3', this, '#3399ff')"><input type="text" ><br></button>
+<button class="tablink" onclick="openPage('PAGE4', this, '#3399ff')"><input type="text" ><br></button>
+
+<div id="PAGE1" class="tabcontent">
+  <h3>TEST HEADER</h3>
+  <p>TEST SENTENCE</p>
+</div>
+
+<div id="PAGE2" class="tabcontent">
+  <h3>TEST HEADER</h3>
+  <p>TEST SENTENCE</p> 
+</div>
+
+<div id="PAGE3" class="tabcontent">
+  <h3>TEST HEADER</h3>
+  <p>TEST SENTENCE</p>
+</div>
+
+<div id="PAGE4" class="tabcontent">
+  <h3>TEST HEADER</h3>
+  <p>TEST SENTENCE</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
 </body>
-</html>
+</html> 
+
 
