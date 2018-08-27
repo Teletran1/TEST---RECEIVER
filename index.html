@@ -1,29 +1,47 @@
+<html> 
+<head> 
+<title>E 1.3</title> 
+<script type="text/javascript"> 
 
+function func_readonly(idval,onoff)
+{
+     document.getElementById(idval).readOnly=onoff;	
 
-<html>
-<head>
-<title>testpage</title>
-</head>
-<body ALINK="#FF0000" LINK="#0000FF" VLINK="#FF33FF" bgcolor="#FFFFCC">
-<table id="myTable" border="1" bgcolor="#CCFFCC" cellpadding="2" cellspacing="5">
-<tr>
-<td >Australia</td>
-<td><input type="text" value="" /></td>
-<td><input type="text" value="" /></td></td>
-<td><a HREF="" target="new">Summary of Accounts</a></td>
-<td><a HREF="" target="new">Estatement</a></td>
-<td><input type="submit" value="edit"></td>
-<td><input type="submit" value="save"></td>
-</tr>
-<tr>
-<td >Australia</td>
-<td><input type="text" value="" /></td>
-<td><input type="text" value="" /></td>
-<td><a HREF="" target="new">Summary of Accounts</a></td>
-<td><a HREF="" target="new">Estatement</a></td>
-<td><input type="submit" value="edit"></td>
-<td><input type="submit" value="save"></td>
-</tr>
-</table>
-</body>
+} 
+</script> 
+</head> 
+<body ALINK="#FF0000" LINK="#0000FF" VLINK="#FF33FF" bgcolor="#FFFFCC"> 
+<table border="0.5" bgcolor="#CCFFCC" cellpadding="2" cellspacing="5"> 
+<tr> 
+<td> 
+<table id="myTable1" border="0.5" bgcolor="#CCFFCC" cellpadding="2" cellspacing="5"> 
+<tr> 
+<td >Australia</td> 
+<td><input type="text" name='txtbox' readOnly=true value="376080039931009" /></td> 
+<td><input type="text" name='txtbox' readOnly=true value="rptau4793" /></td> 
+<td><a HREF="" target="new">Summary of Accounts</a></td> 
+<td><a HREF="" target="new">Estatement</a></td> 
+<td><input type="submit" value="edit" onClick=func_readonly('txtbox',false);></td> 
+<td><input type="submit" value="save" onClick=func_readonly('txtbox',true);></td> 
+</tr> 
+</table> 
+</td> 
+<tr> 
+<td> 
+<table id="myTable2" border="0.5" bgcolor="#CCFFCC" cellpadding="2" cellspacing="5"> 
+<tr> 
+<td >Australia</td> 
+<td><input type="text" name='txtbox1' readOnly=true value="376080039931009" /></td> 
+<td><input type="text" name='txtbox1' readOnly=true value="rptau4793" /></td> 
+<td><a HREF="" target="new">Summary of Accounts</a></td> 
+<td><a HREF="" target="new">Estatement</a></td> 
+<td><input type="submit" value="edit" onClick=func_readonly1('txtbox1',false);></td> 
+<td><input type="submit" value="save" onClick=func_readonly1('txtbox1',true);></td> 
+</tr> 
+</table> 
+</td> 
+</table> 
+</body> 
 </html>
+
+
