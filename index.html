@@ -1,33 +1,13 @@
-<!doctype html>
-<html>
-    <head>
-        <style type="text/css">
-             
-        a#submit{ position:absolute; top:0; left:0; height:100%; width:70px; }
+<!DOCTYPE HTML>
+<html>  
+<body>
 
-        #page p{ display:none }
-        
-        #page:target p{display:inline}
-        #page:target input[type="submit"]{display:none}
-        #page:target input{display:inline-block;border:0px}
-        </style>
-    </head>
-    <body>
-        <div id="page">
-            <form action="" method="post">
-            <p>DBA</p>
-            <input type="text" />
-            <div style="position:relative">
-                <input type="submit">
-                <a id="submit" href="#page"></a>
-            </div>
-            </form>
-        </div>
-    </body>
+<form action="welcome.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
+</body>
 </html>
-
-
-
-
-
 
