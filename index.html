@@ -1,44 +1,31 @@
+<!doctype html>
 <html>
-<body onload="timer=setTimeout('myFunction2(); myFunction();',3000)">
-<style>
-progress {
-  color: #0063a6;
-  font-size: .6em;
-  line-height: 1.5em;
-  text-indent: .5em;
-  width: 30em;
-  height: 3em;
-  border: 1px solid #0063a6;
-  background: #fff;
-}
-</style>
-<h3>Goal Progress:</h3>
-<progress id="myProgress" value="0" max="100">
-</progress>
+    <head>
+        <style type="text/css">
+             
+        a#submit{ position:absolute; top:0; left:0; height:100%; width:70px; }
 
-<hr>
-<form action="form.php" method="POST">
-add money:
-<input type ="text" name="field1" id="myTextarea"></input>
-<hr>
-Goal:
-<input type ="text" name="field2" id="myTextarea2"/>
-<input type="submit" name="submit" value="Save Data">
-</form>
-<hr>
-<button onclick="myFunction2(); myFunction();">show new progress</button>
-<script>
-function myFunction() {
-    var x = document.getElementById("myTextarea").value;
-    document.getElementById("myProgress").value = x;
-}
-function myFunction2() {
-    var x = document.getElementById("myTextarea2").value;
-    document.getElementById("myProgress").max = x;
-}
-</script>
-</body>
+        #page p{ display:none }
+        
+        #page:target p{display:inline}
+        #page:target input[type="submit"]{display:none}
+        #page:target input{display:inline-block;border:0px}
+        </style>
+    </head>
+    <body>
+        <div id="page">
+            <form action="" method="post">
+            <p>DBA</p>
+            <input type="text" />
+            <div style="position:relative">
+                <input type="submit">
+                <a id="submit" href="#page"></a>
+            </div>
+            </form>
+        </div>
+    </body>
 </html>
+
 
 
 
